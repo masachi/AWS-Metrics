@@ -12,6 +12,7 @@ COPY . .
 RUN apk add --no-cache ca-certificates git wget
 
 RUN go get -u github.com/labstack/echo/
+RUN go get -u github.com/dgrijalva/jwt-go
 RUN go get -u github.com/aws/aws-sdk-go/
 
 WORKDIR /go/src/AWS-Metrics/src/main/
