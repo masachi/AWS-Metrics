@@ -6,6 +6,8 @@ import (
 	"net/http"
 )
 
+
+
 func NetWorkInController(context echo.Context) error {
 	startTime := context.FormValue("startTime")
 	endTime := context.FormValue("endTime")
