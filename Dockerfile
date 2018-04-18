@@ -12,4 +12,4 @@ RUN go get -u github.com/aws/aws-sdk-go/
 
 WORKDIR /go/src/app/src/main
 
-CMD["go", "build", "main.go"]
+CMD ["go", "build", "main.go"]
