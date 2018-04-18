@@ -7,7 +7,7 @@ WORKDIR /go/src/app
 
 COPY . .
 
-RUN apt-get update && apt-get install git wget
+RUN apk add --no-cache ca-certificates git wget
 
 RUN go get -u github.com/labstack/echo/
 RUN go get -u github.com/aws/aws-sdk-go/
