@@ -12,10 +12,6 @@ RUN apk add --no-cache ca-certificates git wget
 RUN go get -u github.com/labstack/echo/
 RUN go get -u github.com/aws/aws-sdk-go/
 
-WORKDIR /usr/local/go/src/AWS-Metrics/src/main
-
-RUN ls
-
 EXPOSE 1323
 
-CMD ["go", "build", "main.go"]
+CMD ["go", "build", "/usr/local/go/src/AWS-Metrics/src/main/main.go"]
