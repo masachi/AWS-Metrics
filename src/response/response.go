@@ -1,10 +1,12 @@
 package response
 
-import "go/types"
 
 type Response struct {
-	metricName string `json: "MetricName"`
-	dateRegion types.Array `json: "dateRegion"`
-	metricData types.Array `json: "MetricData"`
+	MetricName string `json: "MetricName"`
+	DateRegion []MetricDate `json: "dateRegion"`
+	MetricData []float64 `json: "MetricData"`
 }
 
+type MetricDate struct {
+	Timestamp interface{} `json: "timestamp"`
+}

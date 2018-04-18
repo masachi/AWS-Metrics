@@ -4,9 +4,8 @@ import (
 	"github.com/labstack/echo"
 	"AWS-Metrics/src/aws"
 	"net/http"
+	"AWS-Metrics/src/services"
 )
-
-
 
 func NetWorkInController(context echo.Context) error {
 	startTime := context.FormValue("startTime")
@@ -16,6 +15,5 @@ func NetWorkInController(context echo.Context) error {
 	params["startTime"] = startTime
 	params["endTime"] = endTime
 
-
-	return context.JSON(http.StatusOK, aws.SdkImplement(params, "in"))
+	return context.JSON(http.StatusOK, services.NetWorkService(aws.SdkImplement(params, "in")))
 }
