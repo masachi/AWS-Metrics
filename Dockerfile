@@ -18,4 +18,4 @@ WORKDIR /go/src/AWS-Metrics/src/main/
 
 EXPOSE 1323
 
-CMD ["go", "build", "main.go"]
+CMD ["nohup", "go", "build", "main.go", ">/dev/null 2>&1", "&"]
