@@ -5,11 +5,13 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/aws"
 	"time"
+	"github.com/aws/aws-sdk-go/aws/credentials"
 )
 
 var awsSession = session.Must(session.NewSessionWithOptions(session.Options{
 	Config: aws.Config{
 		Region: aws.String("ap-northeast-1"),
+		Credentials: credentials.NewStaticCredentials("AKIAJMH6UZDI5UDV3PPQ", "5Hft/sR7rSIXz1QE85PPlD2QJ6KzYR0b74NgGyXS", ""),
 	},
 }))
 
