@@ -15,4 +15,6 @@ func Router()  {
 
 	e.POST("aws/network/usage", controller.NetworkUsageController)
 	e.OPTIONS("aws/network/usage", controller.NetworkUsageController)
+
+	e.GET("aws/test", controller.TestController)
 }
