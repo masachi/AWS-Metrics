@@ -15,7 +15,7 @@ var awsSession = session.Must(session.NewSessionWithOptions(session.Options{
 
 var lightsailSvc = lightsail.New(awsSession)
 
-func SdkImplement(param map[string]string, requestType string) interface{} {
+func SdkImplement(param map[string]string, requestType string) lightsail.GetInstanceMetricDataOutput {
 	switch requestType {
 	case "in":
 		return network(param, requestType)
@@ -25,10 +25,10 @@ func SdkImplement(param map[string]string, requestType string) interface{} {
 		break
 	}
 
-	return []byte{}
+	return lightsail.GetInstanceMetricDataOutput{}
 }
 
-func network(param map[string]string, requestType string) interface{} {
+func network(param map[string]string, requestType string) lightsail.GetInstanceMetricDataOutput {
 	metricInput := lightsail.GetInstanceMetricDataInput{}
 	startTime, _ := time.Parse("2006-01-02 15:04:05", "2018-03-27 00:00:00")
 	endTime := time.Now()
@@ -52,5 +52,5 @@ func network(param map[string]string, requestType string) interface{} {
 
 	metricData, _  := lightsailSvc.GetInstanceMetricData(&metricInput)
 
-	return metricData
+	return *metricData
 }
